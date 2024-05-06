@@ -24,7 +24,7 @@ void loop() {
     }
     Serial.print ("\n");
     
-    EscCount = _ESCBuff ((uint8_t*) &DataEscBuff , (uint8_t*) &DataBuff, BuffCount);
+    EscCount = _ESCBuff (DataEscBuff , DataBuff, BuffCount);
     Serial.print ("ESC bytes - ");
     Serial.print (EscCount);
     Serial.print (" , add bytes - ");
@@ -35,7 +35,7 @@ void loop() {
     }
     Serial.print ("\n");
 
-    DeEscCount = _DeESCBuff ((uint8_t*) &DataDeEscBuff , (uint8_t*) &DataEscBuff, EscCount);
+    DeEscCount = _DeESCBuff (DataDeEscBuff , DataEscBuff, EscCount);
     Serial.print ("DeESC bytes - ");
     Serial.print (DeEscCount);
     Serial.print (" , remove bytes - ");
