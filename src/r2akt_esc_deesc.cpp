@@ -1,6 +1,6 @@
  /******************************************************************************
  *
- *    FILE NAME : r2akt_esc-deesc.c
+ *    FILE NAME : r2akt_esc-deesc.cpp
  *       AUTHOR : Sergey Dorozhkin (R2AKT)
  *         DATE : 05-may-2024
  *      VERSION : 0.0.1
@@ -11,7 +11,7 @@
  ******************************************************************************/
 #include "r2akt_esc_deesc.h"
 
-size_t _ESCBuff (uint8_t *ESCBuff , const uint8_t *UnESCBuff, size_t size) {
+size_t ESCData (uint8_t *ESCBuff, const uint8_t *UnESCBuff, size_t size) {
     size_t count = 0;
     for (size_t i = 0; i < size; i++) {
         if (UnESCBuff[i] == _FEND) {
@@ -27,7 +27,7 @@ size_t _ESCBuff (uint8_t *ESCBuff , const uint8_t *UnESCBuff, size_t size) {
     return count;
 }
  /******************************************************************************/
-size_t _DeESCBuff (uint8_t *DeESCBuff, const uint8_t *ESCBuff, size_t size) {
+size_t DeESCData (uint8_t *DeESCBuff, const uint8_t *ESCBuff, size_t size) {
     size_t count = 0;
     for (size_t i = 0; i < size; i++) {
         if ((ESCBuff[i] == _FESC) && (ESCBuff[i+1] == _TFEND)) {

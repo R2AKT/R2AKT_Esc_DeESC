@@ -16,21 +16,22 @@
 	#include <limits.h>
 	#include <stdlib.h>
 	#include <stdint.h>
+	#include <stddef.h>
 
  /****************************************************************************/
 	#define _FEND 0xC0
 	#define _FESC 0xDB
-	#define _TFEND 0xDC  
+	#define _TFEND 0xDC
 	#define _TFESC 0xDD
 
  /****************************************************************************/
 
 	#ifdef __cplusplus
 		extern "C" {
-	#endif 
+	#endif
  /****************************************************************************/
-	size_t _ESCBuff (uint8_t *ESCBuff , const uint8_t *UnESCBuff, size_t size);
-	size_t _DeESCBuff (uint8_t *DeESCBuff, const uint8_t *ESCBuff, size_t size);
+	size_t ESCData (uint8_t *ESCBuff , const uint8_t *UnESCBuff, size_t size);
+	size_t DeESCData (uint8_t *DeESCBuff, const uint8_t *ESCBuff, size_t size);
 
 	#ifdef __cplusplus
 		}           /* closing brace for extern "C" */
